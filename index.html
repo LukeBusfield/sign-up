@@ -13,9 +13,52 @@
             <img src="./images/logo.jpg" alt="logo">
             <p> Whatever it is we are selling...
             </p>
-            <p>...Just log in!</p>
+            <p>...Just sign up!</p>
         </div>
-        <div id="right-side"></div>
+        <div id="right-side">
+            <p>This is not a real online service! You know you need something like in your life to help you realise your deepest dreams. <br>Sign up <em>now</em> to get started.</p>
+            <p>You <em>know</em> you want to.</p>
+            <form action="" method="">
+                <fieldset>
+                    <caption>Let’s do this!</caption>
+                    <div class="row">
+                        <div class="input-container">
+                            <lable for="first-name" required>*FIRST NAME</lable>
+                            <input type="text" id="first-name">
+                        </div>
+                        <div class="input-container">
+                            <lable for="last-name" required>*LAST NAME</lable>
+                            <input type="text" id="last-name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-container">
+                            <lable for="email" required>*EMAIL</lable>
+                            <input type="email" id="email">
+                        </div>
+
+                        <!--Need to think about regex here-->
+                        <div class="input-container">
+                            <lable for="phone-number">PHONE NUMBER</lable>
+                            <input type="text" id="phone-number">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-container">
+                            <lable for="password" required>*PASSWORD</lable>
+                            <input type="text" id="password">
+                        </div>
+
+                        <div class="input-container">
+                            <lable for="confirm-password" required>*CONFIRM PASSWORD</lable>
+                            <input type="text" id="confirm-password">
+                        </div>
+                    </div>
+                </fieldset>
+                <button type="submit">Create Account</button>
+            </form>
+            <p id="log-in">Already have an Account? <a href="">Log in</a></p>
+        </div>
     </div>
 </body>
 </html>
