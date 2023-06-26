@@ -1,0 +1,29 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+}
+@font-face{
+    font-family: "Noto Sans Japanese";
+    src: url("Noto_Sans_JP/NotoSansJP-VariableFont_wght.ttf") format("truetype");
+}
+:root{
+    font-family: "Noto Sans Japanese", sans-serif;
+}
+#container{
+    display: flex;
+}
+#left-side{
+    background-color: black;
+    min-height: 100vh;
+    width: 40vw;
+    color: white;
+    padding-left: 2vw;
+}
+#left-side > p{
+    font-size: clamp(18px, 6vw, 64px);
+    margin-top: 5vh;
+    padding-left: 5vw;
+}
+img{
+    width: max(10vw, 100px);
+}
