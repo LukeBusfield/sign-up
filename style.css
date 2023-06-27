@@ -55,7 +55,7 @@ form > fieldset{
     padding-left: 2vw;
     padding-right: 20vw;
     border: 0;
-    gap: 10px;
+    gap: 2vh;
 }
 lable{
     color: rgb(80, 80, 80);
@@ -67,9 +67,11 @@ input{
     padding: 1vh;
     padding-right: 5vw;
 }
-input:invalid{
-    border: 2px solid red;
-}
+input:focus {
+    border: 2px solid blue;
+    box-shadow: 0 0 5px blue;
+    outline: none;
+}  
 .row{
     display: flex;
     justify-content:space-between;
@@ -77,6 +79,10 @@ input:invalid{
 .input-container{
     display: flex;
     flex-direction: column;
+}
+#password-error-message{
+    color: red;
+    font-size: 11px;
 }
 #log-in{
     font-size: 14px;

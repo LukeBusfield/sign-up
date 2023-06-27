@@ -3,62 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign-up</title>
+    <title>Sign up</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
 <body>
     <div id="container">
         <div id="left-side">
             <img src="./images/logo.jpg" alt="logo">
-            <p> Whatever it is we are selling...
-            </p>
+            <p> Whatever it is we are selling...</p>
             <p>...Just sign up!</p>
         </div>
         <div id="right-side">
             <p>This is not a real online service! You know you need something like in your life to help you realise your deepest dreams. <br>Sign up <em>now</em> to get started.</p>
             <p>You <em>know</em> you want to.</p>
-            <form action="" method="">
+            <form id="form" onsubmit="submitForm(event)" autocomplete>
                 <fieldset>
                     <caption>Let’s do this!</caption>
                     <div class="row">
                         <div class="input-container">
-                            <lable for="first-name" required>*FIRST NAME</lable>
-                            <input type="text" id="first-name">
+                            <lable for="first-name">*FIRST NAME</lable>
+                            <input type="text" id="first-name"  required name="first-name" placeholder="John">
                         </div>
                         <div class="input-container">
-                            <lable for="last-name" required>*LAST NAME</lable>
-                            <input type="text" id="last-name">
+                            <lable for="last-name">*LAST NAME</lable>
+                            <input type="text" id="last-name" required name="last-name" placeholder="Doe">
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-container">
-                            <lable for="email" required>*EMAIL</lable>
-                            <input type="email" id="email">
+                            <lable for="email">*EMAIL</lable>
+                            <input type="email" id="email" required name="email" placeholder="john.doe@gmail.com">
                         </div>
 
-                        <!--Need to think about regex here-->
                         <div class="input-container">
                             <lable for="phone-number">PHONE NUMBER</lable>
-                            <input type="text" id="phone-number">
+                            <input type="text" id="phone-number" name="phone-number">
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-container">
-                            <lable for="password" required>*PASSWORD</lable>
-                            <input type="text" id="password">
+                            <lable for="password">*PASSWORD</lable>
+                            <input type="password" oninput="displayPassword('*')" id="password" required name="password">
+                            <p id="password-error-message"></p>
                         </div>
 
                         <div class="input-container">
-                            <lable for="confirm-password" required>*CONFIRM PASSWORD</lable>
-                            <input type="text" id="confirm-password">
+                            <lable for="confirm-password">*CONFIRM PASSWORD</lable>
+                            <input type="password" oninput="displayPassword('*')" id="confirm-password" required name="confirm-password">
                         </div>
                     </div>
                 </fieldset>
-                <button type="submit">Create Account</button>
+                <button type="submit" value="submit">Create Account</button>
             </form>
             <p id="log-in">Already have an Account? <a href="">Log in</a></p>
         </div>
+        <div id="right-side"></div>
     </div>
-</body>
-</html>
+
+</html></body>
