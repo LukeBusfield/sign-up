@@ -10,8 +10,6 @@ function submitForm(event){
 
     const password_error_message = document.getElementById("password-error-message");
 
-
-
     if(password != confirm_password){
         password_error_message.textContent = "*Passwords do not match!";
         return;
@@ -25,4 +23,61 @@ function submitForm(event){
                             + "&phone-number=" + encodeURIComponent(phone_number)
                             + "&password=" + encodeURIComponent(CryptoJS.SHA256(password).toString());
     window.open("main.html?" + queryParams);
+}
+
+function validatePassword(){
+    const password = document.getElementById("password").value;
+    const reqs = document.getElementById("password-requirements");
+    const submit = document.getElementById("submit-button");
+
+    if(password === ""){
+        for(let i = 0; i < reqs.children[1].children.length; i++){   
+            reqs.children[1].children[i].style.color = "black";   
+        }
+        submit.disabled = true;
+        return;                                                                                
+    }
+
+    let isValid = true;
+
+    if(password.length < 8){
+        reqs.children[1].children[0].style.color = "red";  
+        isValid = false;                                                                                 
+    }else{
+        reqs.children[1].children[0].style.color = "green";
+    }
+
+    if(/(?=.*[A-Z])/.test(password)){
+        reqs.children[1].children[1].style.color = "green";
+    }else{
+        reqs.children[1].children[1].style.color = "red";
+        isValid = false;                                                                                 
+    }
+
+    if(/(?=.*[a-z])/.test(password)){
+        reqs.children[1].children[2].style.color = "green";
+    }else{
+        reqs.children[1].children[2].style.color = "red";
+        isValid = false;                                                                                 
+    }
+
+    if(/(?=.*[!@#$%^&*()])/.test(password)){
+        reqs.children[1].children[3].style.color = "green";
+    }else{
+        reqs.children[1].children[3].style.color = "red";
+        isValid = false;                                                                                 
+    }
+
+    if(/(?=.*\d)/.test(password)){
+        reqs.children[1].children[4].style.color = "green";
+    }else{
+        reqs.children[1].children[4].style.color = "red";
+        isValid = false;                                                                                 
+    }
+
+    if(isValid){
+        submit.disabled = false;
+    }else{
+        submit.disabled = true;
+    }
 }

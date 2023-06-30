@@ -53,9 +53,27 @@ form > fieldset{
     flex-direction: column;
     background-color: white;
     padding-left: 2vw;
-    padding-right: 20vw;
+    padding-right: 10vw;
     border: 0;
     gap: 2vh;
+}
+#below-caption{
+    display: flex;
+    flex-direction: row;
+}
+#form-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#password-requirements{
+    font-size: 14px;
+    margin-left: 10px;
+    border: 1px dotted gray;
+    padding: 2px;
+}
+#password-requirements > p{
+    margin: 0;
 }
 lable{
     color: rgb(80, 80, 80);
@@ -68,13 +86,15 @@ input{
     padding-right: 5vw;
 }
 input:focus {
-    border: 2px solid blue;
+    border: 1px solid blue;
     box-shadow: 0 0 5px blue;
     outline: none;
 }  
 .row{
     display: flex;
+    flex-direction: row;
     justify-content:space-between;
+    gap: 10px;
 }
 .input-container{
     display: flex;
@@ -86,4 +106,15 @@ input:focus {
 }
 #log-in{
     font-size: 14px;
+}
+@media (max-width: 1000px){
+    #container{
+        flex-direction: column;
+    }
+    #left-side{
+        min-height: 20vh;
+    }
+    #below-caption{
+        flex-direction: column;
+    }
 }
