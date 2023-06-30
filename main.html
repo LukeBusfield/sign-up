@@ -6,10 +6,29 @@
     <title>Main page</title>
 </head>
 <body>
-    <p id="name">So, your name is </p>
-    <p id="email"> Mind if I write an email to ""?</p>
-    <p id="password">Your password is: </p>
-    <p>Hey, did you really think I was just gonna post your real password. 
-        That’s just the hash.</p>
+    <p id="name"></p>
+    <p id="email"></p>
+    <p id="number"></p>
+    <p id="password"></p>
+    <p>Hey, did you really think I was just gonna post your real password? 
+        Relax, that’s just the hash.</p>
+        <script>
+            const url = new URL(window.location.href);
+            const params = new URLSearchParams(url.search);
+    
+            const name = params.get("first-name") +  " " + params.get("last-name");
+            const email = params.get("email");
+            const number = params.get("phone-number");
+            const password = params.get("password");
+    
+            document.getElementById("name").textContent = `So, your name is ${name}?`;
+            document.getElementById("email").textContent = `Your email address is ${email}.`;
+            if(number === ""){
+                document.getElementById("number").textContent = "You don’t like to share any unnecessary information, do you?"
+            }else{
+                document.getElementById("number").textContent = `Oh, and your number is ${number}.`;
+            }
+            document.getElementById("password").textContent = `And your password is ${password}`;
+        </script>        
 </body>
 </html>

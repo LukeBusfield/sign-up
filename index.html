@@ -40,18 +40,18 @@
                             </div>
                             <div class="input-container">
                                 <lable for="phone-number">PHONE NUMBER</lable>
-                                <input type="text" id="phone-number" name="phone-number">
+                                <input type="text" pattern="^[0-9\s+]+$" id="phone-number" name="phone-number">
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-container">
                                 <lable for="password">*PASSWORD</lable>
-                                <input type="password" onblur="validatePassword()" id="password" required name="password">
+                                <input type="password" oninput="validatePassword()" id="password" required name="password">
                                 <p id="password-error-message"></p>
                             </div>
                             <div class="input-container">
                                 <lable for="confirm-password">*CONFIRM PASSWORD</lable>
-                                <input type="password" id="confirm-password" required name="confirm-password">
+                                <input type="password" oninput="confirmPassword()" id="confirm-password" required name="confirm-password">
                             </div>
                         </div>
                         </div>

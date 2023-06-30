@@ -10,13 +10,6 @@ function submitForm(event){
 
     const password_error_message = document.getElementById("password-error-message");
 
-    if(password != confirm_password){
-        password_error_message.textContent = "*Passwords do not match!";
-        return;
-    }else{
-        password_error_message.textContent = "";
-    }
-
     const queryParams = "first-name=" + encodeURIComponent(first_name)
                             + "&last-name=" + encodeURIComponent(last_name)
                             + "&email=" + encodeURIComponent(email)
@@ -79,5 +72,31 @@ function validatePassword(){
         submit.disabled = false;
     }else{
         submit.disabled = true;
+    }
+
+    if(document.getElementById("confirm-password").value != ""){
+        confirmPassword();
+    }
+}
+
+function confirmPassword(){
+    const password = document.getElementById("password").value;
+    const confirmation = document.getElementById("confirm-password").value;
+    const submit = document.getElementById("submit-button");
+
+    let confirmed;
+
+    if(password != confirmation){
+        confirmed = false;
+    }else{
+        confirmed = true;
+    }
+
+    if(confirmed){
+        submit.disabled = false;
+        document.getElementById("password-error-message").textContent = "";
+    }else{
+        submit.disabled = true;
+        document.getElementById("password-error-message").textContent = "*Passwords do not match!";
     }
 }
